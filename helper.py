@@ -1,5 +1,3 @@
-from re import I
-from unicodedata import name
 import requests
 import json
 import math
