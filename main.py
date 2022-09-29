@@ -6,7 +6,7 @@ from discord.ext import commands
 
 intents = discord.Intents.default()
 intents.message_content = True
-bot = commands.Bot(command_prefix='.', intents=intents, application_id=config.APP_ID)
+bot = commands.Bot(command_prefix='.', intents=intents, application_id=os.getenv('APP_ID'))
 
 @bot.event
 async def on_ready():
@@ -28,6 +28,6 @@ async def load():
 
 async def main():
     await load()
-    await bot.start(config.TOKEN)
+    await bot.start(os.getenv('TOKEN'))
 
 asyncio.run(main())
